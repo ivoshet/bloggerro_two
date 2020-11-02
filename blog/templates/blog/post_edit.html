@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %} {% block content %}
+  <h1>New post</h1>
+  <form method="POST" class="post-form">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-success"">Save</button>
+  </form>
+  <div class="link_main_page">
+    <a href="{% url "post_list" %}" class="btn btn-outline-dark"><< main</a>
+  </div>
+{% endblock content %}
